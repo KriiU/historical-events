@@ -1,0 +1,115 @@
+.navigation {
+	// Основные стили
+	width: 100%;
+	max-width: 120px;
+
+	// Счетчик страниц
+	&__total {
+		font-weight: 400;
+		font-size: 14px;
+		color: var(--font-main-color);
+		margin: 0;
+		padding: 0 0 20px 0;
+
+		@media (width < 426px) {
+			padding-bottom: 10.67px;
+		}
+	}
+
+	// Медиа-запросы
+	@media (width < 426px) {
+		max-width: 58.33px;
+		padding-left: 10px;
+		padding-right: 10px;
+		box-sizing: border-box;
+	}
+}
+
+.control-buttons {
+	// Основные стили
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+
+	// Кнопки навигации
+	&__default {
+		background-color: var(--bg-color);
+		border: 1px solid rgba(66, 86, 122, 0.5);
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: background-color 0.1s linear;
+		padding: 0 3px 3px 0;
+		position: relative;
+
+		&:hover {
+			background-color: #fff;
+		}
+
+		&::after {
+			position: absolute;
+			content: "";
+			border: solid var(--font-main-color);
+			border-width: 0 2px 2px 0;
+			width: 8px;
+			height: 8px;
+
+			@media (width < 426px) {
+				border-width: 0 2px 2px 0;
+				width: 5px;
+				height: 5px;
+			}
+		}
+
+		&:disabled {
+			opacity: 0.5;
+			cursor: default;
+
+			&:hover {
+				background-color: var(--bg-color);
+			}
+		}
+
+		@media (width < 426px) {
+			height: 25px;
+			width: 25px;
+			padding: 0 1px 1px 0;
+		}
+	}
+
+	// Кнопка "Назад"
+	&__prev {
+		&::after {
+			transform: rotate(135deg);
+		}
+	}
+
+	// Кнопка "Вперед"
+	&__next {
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+// Анимации
+@keyframes buttonPulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.05);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+// Классы для анимаций
+.pulsing {
+	animation: buttonPulse 0.3s ease-in-out;
+} 

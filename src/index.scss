@@ -1,0 +1,24 @@
+:root {
+  --font-main-color: #42567A;
+  --font-range-start-color: #3877EE;
+  --font-range-end-color: #EF5DA8;
+  --font-year-color: #3877EE;
+  --bg-color: #F4F5F9;
+  --line-color: #C7CDD9;
+  --spinner-color: #C7CDD9;
+  --circle-color: #42567A;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

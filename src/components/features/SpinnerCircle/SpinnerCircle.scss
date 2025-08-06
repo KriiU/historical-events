@@ -1,0 +1,105 @@
+.spinner {
+	// CSS переменные для анимаций
+	--angle: 0deg;
+	--time: 300ms;
+	--delay: 300ms;
+
+	// Основной круг
+	&__main-circle {
+		position: relative;
+		width: 530px;
+		height: 530px;
+		border: 1px solid var(--spinner-color);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: rotate(var(--angle));
+		transition: all var(--time) ease-in-out 0s;
+		z-index: 2;
+		background: transparent;
+	}
+
+	// Область для точек
+	&__circle-area {
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		cursor: pointer;
+		visibility: visible;
+		position: relative;
+
+		&:hover .spinner__circle {
+			background-color: var(--bg-color);
+			scale: 1;
+		}
+	}
+
+	// Точки на круге
+	&__circle {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #42567A;
+		width: 56px;
+		height: 56px;
+		border-radius: 50%;
+		transform: rotate(calc(-360deg / var(--count) * var(--i) - var(--angle)));
+		border: 1px solid var(--circle-color);
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 150%;
+		color: var(--font-main-color);
+		visibility: visible;
+		scale: 0.105;
+		transition: all 300ms ease-in-out;
+	}
+
+	// Заголовки категорий
+	&__title {
+		position: absolute;
+		left: 76px;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 150%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 300ms linear var(--delay);
+		color: var(--font-main-color);
+	}
+
+	// Плечи круга (секторы)
+	&__shoulder {
+		width: calc(100% + 56px);
+		transform-origin: center;
+		position: absolute;
+		transform: rotate(calc(360deg / var(--count) * var(--i)));
+		visibility: hidden;
+
+		// Активное состояние
+		&_active {
+			& .spinner__title {
+				opacity: 1;
+				visibility: visible;
+				cursor: default;
+			}
+
+			& .spinner__circle {
+				width: 56px;
+				height: 56px;
+				background-color: var(--bg-color);
+				scale: 1;
+				cursor: default;
+				border: 1px solid var(--font-main-color);
+			}
+		}
+	}
+
+	// Медиа-запросы
+	@media (width <= 768px) {
+		display: none;
+	}
+} 

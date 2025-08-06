@@ -1,0 +1,37 @@
+.events {
+	// Контейнер кнопок управления
+	&__control-buttons {
+		order: 3;
+		display: none;
+	
+		@media (width < 426px) {
+			display: flex;
+			margin-top: auto;
+			flex-direction: row;
+			gap: 10px;
+			justify-content: center;
+		}
+	}
+
+	// Кнопки управления
+	&__button {
+		padding: 0;
+		background-color: var(--font-main-color);
+		border: none;
+		height: 6px;
+		width: 6px;
+		border-radius: 50%;
+		cursor: pointer;
+		opacity: 0.4;
+		margin-bottom: 18.67px;
+		transition: opacity 0.2s ease-in-out;
+
+		&_active {
+			opacity: 1;
+		}
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+} 

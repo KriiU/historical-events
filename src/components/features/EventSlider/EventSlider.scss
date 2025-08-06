@@ -1,0 +1,194 @@
+.slider {
+	// Основные стили
+	padding-left: 60px;
+	padding-right: 60px;
+	display: flex;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 150ms ease-in-out;
+	position: relative;
+
+	// Состояния
+	&_show {
+		opacity: 1;
+
+		@media (width < 426px) {
+			animation: slideToUp 300ms ease-in-out;
+		}
+	}
+
+	// Слайды
+	&__slide {
+		max-width: 420px;
+		min-width: 280px;
+		min-height: 220px;
+		width: 100%;
+		padding: 20px;
+		border-radius: 12px;
+		position: relative;
+		box-sizing: border-box;
+
+		@media (width < 768px) {
+			opacity: 0.4;
+			&.swiper-slide-active {
+				opacity: 1;
+			}
+
+		}
+
+		@media (width < 426px) {
+			min-height: 0;
+			min-width: 160px;
+			padding: 10px;
+			box-sizing: border-box;
+
+			&.swiper-slide-active {
+				opacity: 1;
+			}
+		}
+	}
+
+	// Контент слайдов
+	&__year {
+		margin: 0;
+		padding: 0 0 15px 0;
+		font-family: 'Bebas Neue', sans-serif;
+		font-weight: 400;
+		font-size: 25px;
+		line-height: 120%;
+		text-transform: uppercase;
+		color: var(--font-year-color);
+
+		@media (width < 426px) {
+			font-size: 16px;
+		}
+	}
+
+	&__description {
+		padding: 0;
+		margin: 0;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 150%;
+		color: var(--font-main-color);
+
+		@media (width < 426px) {
+			font-size: 14px;
+			line-height: 145%;
+		}
+	}
+
+	// Кнопки навигации
+	&__btn {
+		position: absolute;
+		width: 40px;
+		height: 40px;
+		border-radius: 100%;
+		border: none;
+		box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
+		background: #fff;
+		cursor: pointer;
+		padding: 0 10px 10px 0;
+
+		&::before {
+			content: "";
+			position: absolute;
+			border: solid var(--font-year-color);
+			width: 6px;
+			height: 6px;
+			border-width: 0 2px 2px 0;
+		}
+
+		&_prev {
+			left: 10px;
+			transform: rotate(135deg);
+		}
+
+		&_next {
+			right: 10px;
+			transform: rotate(-45deg);
+		}
+
+		&:disabled {
+			display: none;
+		}
+
+		@media (width <=768px) {
+			display: none;
+		}
+	}
+
+	// Мобильный заголовок
+	&__mobile-title {
+		padding: 0 0 20px 0;
+		margin: 0;
+		font-size: 14px;
+		font-weight: 700;
+		color: var(--font-main-color);
+		display: none;
+
+		@media (width < 426px) {
+			display: block;
+		}
+	}
+
+	// Swiper контейнер
+	& .swiper {
+		width: 100%;
+		overflow: hidden;
+	}
+
+	& .swiper-wrapper {
+		display: flex;
+		align-items: stretch;
+	}
+
+	& .swiper-slide {
+		height: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	// Медиа-запросы
+	@media (width < 426px) {
+		padding-left: 10px;
+		padding-right: 10px;
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+
+		& .swiper {
+			border-top: 1px solid #C7CDD9;
+			padding-top: 20px;
+			min-height: 217px;
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+}
+
+// Анимации
+@keyframes slideToUp {
+	0% {
+		transform: translateY(10px);
+	}
+}
+
+@keyframes sliderPulse {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.02);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+// Классы для анимаций
+.slider-pulsing {
+	animation: sliderPulse 0.4s ease-in-out;
+}

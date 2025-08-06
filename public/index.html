@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="color-scheme" content="dark light" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Исторические события - Интерактивная временная шкала</title>
+    <meta name="title" content="Исторические события - Интерактивная временная шкала" />
+    <meta name="description" content="Исследуйте важные исторические события через интерактивную временную шкалу с анимированным слайдером. Погрузитесь в историю с современным веб-интерфейсом." />
+    <meta name="keywords" content="история, исторические события, временная шкала, интерактивная история, даты, события" />
+    <meta name="author" content="Historical Events App" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://historical-events.vercel.app/" />
+    <meta property="og:title" content="Исторические события - Интерактивная временная шкала" />
+    <meta property="og:description" content="Исследуйте важные исторические события через интерактивную временную шкалу с анимированным слайдером." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://historical-events.vercel.app/" />
+    <meta property="twitter:title" content="Исторические события - Интерактивная временная шкала" />
+    <meta property="twitter:description" content="Исследуйте важные исторические события через интерактивную временную шкалу с анимированным слайдером." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
+    
+    <!-- PWA Meta Tags -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Исторические события" />
+    
+    <!-- Performance and Security -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/favicon.ico" as="image" type="image/x-icon" />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Исторические события",
+      "description": "Интерактивная временная шкала исторических событий",
+      "url": "https://historical-events.vercel.app/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  </head>
+  <body>
+    <noscript>
+      <div style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        text-align: center;
+        padding: 20px;
+      ">
+        <div>
+          <h1 style="margin-bottom: 20px; font-size: 2rem;">Исторические события</h1>
+          <p style="font-size: 1.1rem; line-height: 1.6;">
+            Для работы приложения необходимо включить JavaScript в вашем браузере.
+            <br />
+            Это интерактивное приложение для изучения исторических событий.
+          </p>
+          <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+            <h3>Как включить JavaScript:</h3>
+            <ul style="text-align: left; display: inline-block; margin-top: 10px;">
+              <li>Chrome: Настройки → Безопасность → Настройки сайтов → JavaScript</li>
+              <li>Firefox: Настройки → Приватность и защита → Разрешения → JavaScript</li>
+              <li>Safari: Настройки → Веб-сайты → JavaScript</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </noscript>
+    
+    <div id="root"></div>
+    
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
