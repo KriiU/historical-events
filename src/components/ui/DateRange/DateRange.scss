@@ -169,7 +169,6 @@
 		
 		&__separator {
 			margin: 0 3px;
-			display: none;
 			
 			&-line {
 				width: 15px;
@@ -187,7 +186,12 @@
 			right: -8px;
 		}
 	}
+
+	@media (max-width: 320px) {
+		font-size: 48px;
+	}
 }
+
 
 // Дополнительные индикаторы
 .range__error-indicator {

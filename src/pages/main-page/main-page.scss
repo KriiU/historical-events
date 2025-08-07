@@ -28,7 +28,7 @@
   flex-direction: column;
 
 	@media (max-width: 490px) {
-		min-height:100vh;
+		min-height:600px;
 		width: 100%;
 		box-sizing: border-box;
 		overflow-x: hidden;
@@ -112,7 +112,7 @@
 			margin-top: auto;
 			margin-left: 20px;
 			position: absolute;
-			bottom: 13.33px;
+			bottom: 0;
 			z-index: 99;
 		}
 	}
@@ -127,11 +127,6 @@
 			margin-top: 35px;
 			margin-bottom: 0;
 		}
-	}
-
-	@media (max-width: 490px) {
-		min-height: 100vh;
-		padding-bottom: 13.33px;
 	}
 
 }
