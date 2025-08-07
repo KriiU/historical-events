@@ -131,7 +131,7 @@
 		}
 	}
 	
-	@media (width < 768px) {
+	@media (max-width: 768px) {
 		max-width: 273px;
 		font-size: 56px;
 		padding: 0 15px;
@@ -156,10 +156,16 @@
 		}
 	}
 	
-	@media (width < 426px) {
+	@media (max-width: 490px) {
 		max-width: 100%;
-		font-size: 48px;
+		font-size: 56px;
 		padding: 0 20px;
+		justify-content: space-between;
+		&_start,
+		&_end{
+			margin-left: 0;
+			margin-right: 0;
+		}
 		
 		&__separator {
 			margin: 0 3px;

@@ -12,7 +12,7 @@
 	&_show {
 		opacity: 1;
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			animation: slideToUp 300ms ease-in-out;
 		}
 	}
@@ -28,7 +28,7 @@
 		position: relative;
 		box-sizing: border-box;
 
-		@media (width < 768px) {
+		@media (max-width: 768px) {
 			opacity: 0.4;
 			&.swiper-slide-active {
 				opacity: 1;
@@ -36,7 +36,7 @@
 
 		}
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			min-height: 0;
 			min-width: 160px;
 			padding: 10px;
@@ -59,7 +59,7 @@
 		text-transform: uppercase;
 		color: var(--font-year-color);
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			font-size: 16px;
 		}
 	}
@@ -72,7 +72,7 @@
 		line-height: 150%;
 		color: var(--font-main-color);
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			font-size: 14px;
 			line-height: 145%;
 		}
@@ -113,7 +113,7 @@
 			display: none;
 		}
 
-		@media (width <=768px) {
+		@media (max-width: 768px) {
 			display: none;
 		}
 	}
@@ -127,7 +127,7 @@
 		color: var(--font-main-color);
 		display: none;
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			display: block;
 		}
 	}
@@ -150,7 +150,7 @@
 	}
 
 	// Медиа-запросы
-	@media (width < 426px) {
+	@media (max-width: 490px) {
 		padding-left: 10px;
 		padding-right: 10px;
 		display: block;

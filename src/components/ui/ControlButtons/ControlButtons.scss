@@ -4,7 +4,7 @@
 		order: 3;
 		display: none;
 	
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			display: flex;
 			margin-top: auto;
 			flex-direction: row;

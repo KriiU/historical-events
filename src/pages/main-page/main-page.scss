@@ -8,7 +8,7 @@
 	border-right: 1px solid var(--line-color);
 	background: linear-gradient(var(--line-color), var(--line-color)) no-repeat center/1px 100%;
 
-	@media (width < 426px) {
+	@media (max-width: 490px) {
 		border-left: none;
 		border-right: none;
 		background: none;
@@ -27,7 +27,7 @@
 	display: flex;
   flex-direction: column;
 
-	@media (width < 426px) {
+	@media (max-width: 490px) {
 		min-height:100vh;
 		width: 100%;
 		box-sizing: border-box;
@@ -55,7 +55,7 @@
     	left: -1px;
 		}
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			padding-top: 59px;
 			padding-left: 20px;
 			font-size: 20px;
@@ -71,7 +71,7 @@
 	&__range {
 		padding-top: 96px;
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
 			padding-top: 70px;
 		}
 	}
@@ -93,6 +93,9 @@
 			top: 265px;
     	left: 0;
 			z-index: 0;
+			@media (max-width: 490px) {
+				display: none;
+			}	
 		}
 	}
 
@@ -101,11 +104,12 @@
 		margin-left: 80px;
 		order: 1;
 
-		@media (width < 768px) {
+		@media (max-width: 768px) {
 			order: 2;
 		}
 
-		@media (width < 426px) {
+		@media (max-width: 490px) {
+			margin-top: auto;
 			margin-left: 20px;
 			position: absolute;
 			bottom: 13.33px;
@@ -118,14 +122,14 @@
 		margin-bottom: 104px;
 		order: 2;
 
-		@media (width < 768px) {
+		@media (max-width: 768px) {
 			order: 1;
 			margin-top: 35px;
 			margin-bottom: 0;
 		}
 	}
 
-	@media (width < 426px) {
+	@media (max-width: 490px) {
 		min-height: 100vh;
 		padding-bottom: 13.33px;
 	}

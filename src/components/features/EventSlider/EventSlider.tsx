@@ -109,19 +109,19 @@ const EventSlider: React.FC<EventSliderProps> = memo(({
   // Настройки Swiper для разных разрешений
   const swiperBreakpoints = {
     320: {
-      slidesPerView: 1,
+      slidesPerView: 1.3,
       spaceBetween: 10,
       centeredSlides: false,
       allowTouchMove: true
     },
     480: {
-      slidesPerView: 1,
+      slidesPerView: 1.3,
       spaceBetween: 20,
       centeredSlides: false,
       allowTouchMove: true
     },
     768: {
-      slidesPerView: 2,
+      slidesPerView: 2.3,
       spaceBetween: 40,
       centeredSlides: false,
       allowTouchMove: true

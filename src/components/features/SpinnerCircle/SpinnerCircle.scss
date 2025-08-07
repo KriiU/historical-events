@@ -18,8 +18,13 @@
 		transition: all var(--time) ease-in-out 0s;
 		z-index: 2;
 		background: transparent;
+		
+		// Медиа-запросы для мобильных устройств
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
-
+	
 	// Область для точек
 	&__circle-area {
 		width: 56px;
@@ -98,8 +103,4 @@
 		}
 	}
 
-	// Медиа-запросы
-	@media (width <= 768px) {
-		display: none;
-	}
 } 
