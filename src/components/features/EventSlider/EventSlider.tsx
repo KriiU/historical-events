@@ -28,14 +28,15 @@ const EventSlider: React.FC<EventSliderProps> = memo(({
   // Локальное состояние для анимаций
   const [isPulsing, setIsPulsing] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   /**
    * Функция для воспроизведения звука и пульсации
    * Создает звуковой эффект с помощью Web Audio API
    */
   const playSoundAndPulse = useCallback(() => {
-    // Создаем звуковой эффект
-    if (!audioRef.current) {
+    // Создаем звуковой эффект только на десктопе
+    if (!isMobile && !audioRef.current) {
       audioRef.current = new Audio();
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
       const oscillator = audioContext.createOscillator();
@@ -54,10 +55,12 @@ const EventSlider: React.FC<EventSliderProps> = memo(({
       oscillator.stop(audioContext.currentTime + 0.15);
     }
 
-    // Запускаем пульсацию
-    setIsPulsing(true);
-    setTimeout(() => setIsPulsing(false), 400);
-  }, []);
+    // Запускаем пульсацию только на десктопе
+    if (!isMobile) {
+      setIsPulsing(true);
+      setTimeout(() => setIsPulsing(false), 400);
+    }
+  }, [isMobile]);
 
   /**
    * Обработчик изменения слайда
@@ -79,6 +82,20 @@ const EventSlider: React.FC<EventSliderProps> = memo(({
   const handleButtonClick = useCallback(() => {
     playSoundAndPulse();
   }, [playSoundAndPulse]);
+
+  /**
+   * Эффект для определения мобильного устройства
+   */
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   /**
    * Эффект для плавного перехода при смене категории
@@ -104,7 +121,7 @@ const EventSlider: React.FC<EventSliderProps> = memo(({
   }, [currentCategory]);
 
   // CSS классы для стилизации
-  const sliderClassName = `historic-dates__slider slider${isPulsing ? ' slider-pulsing' : ''}${isVisible ? ' slider_show' : ''}`;
+  const sliderClassName = `historic-dates__slider slider${isPulsing && !isMobile ? ' slider-pulsing' : ''}${isVisible ? ' slider_show' : ''}`;
 
   // Настройки Swiper для разных разрешений
   const swiperBreakpoints = {

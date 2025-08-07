@@ -188,7 +188,26 @@
 	}
 }
 
+@keyframes sliderPulseMobile {
+	0% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.005);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
 // Классы для анимаций
 .slider-pulsing {
 	animation: sliderPulse 0.4s ease-in-out;
+	
+	// Более мягкая пульсация на мобильных устройствах
+	@media (max-width: 768px) {
+		animation: sliderPulseMobile 0.3s ease-in-out;
+	}
 }
